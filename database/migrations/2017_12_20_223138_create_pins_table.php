@@ -15,7 +15,10 @@ class CreatePinsTable extends Migration
     {
         Schema::create('pins', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('pin', 100)->unique();
+            $table->enum('state', array('True', 'False',))->default('True');
+            $table->integer('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

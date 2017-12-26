@@ -9,6 +9,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" >
 
         <!-- Styles -->
         <style>
@@ -65,7 +67,7 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="col-md-12 col-ls-12 col-sm-12">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -76,20 +78,23 @@
                     @endauth
                 </div>
             @endif
+        </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+        <div style="margin-top: 100px;" class="col-md-12 col-ls-12 col-sm-12"></div>
+        
+        <div class="col-md-12 col-ls-12 col-sm-12">
+            <div class="container">
+                <div class="row">  
+                    <div class="col-md-12 col-ls-12 col-sm-12">                    
+                        <img class="img-responsive center-block" style="width: 40%; height: 40%;" src="{{ asset('img/logo_PLANETAAZUL.png')}}" alt="Not found">
+                    </div>
                 </div>
             </div>
-        </div>
+        </div>       
+
+        <!-- jQuery -->
+        <script src="{{ asset('jquery/jquery.min.js') }}"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     </body>
 </html>

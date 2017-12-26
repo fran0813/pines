@@ -11,8 +11,8 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'FUNDADIF') }}
+            <a class="navbar-brand" href="{{ url('/home') }}">
+                {{ config('app.name', 'PINES') }}
             </a>
         </div>
         
@@ -23,17 +23,22 @@
                 &nbsp;
                 
                 <ul class="nav navbar-nav navbar-left"> 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                            Pines <span class="caret"></span>
-                        </a>
+                    @guest
+                        
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                Pines <span class="caret"></span>
+                            </a>
 
-                        <ul class="dropdown-menu">
-                            <li class="text-left">
-                                <a href="{{ url('/admin/generarPines') }}">Generar</a>
-                            </li>
-                        </ul>
-                    </li>
+                            <ul class="dropdown-menu">
+                                <li class="text-left">
+                                    <a href="{{ url('/admin/producto') }}">Productos</a>
+                                    <a href="{{ url('/admin/pin') }}">Generar</a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endguest
                 </ul>
             </ul>
 
